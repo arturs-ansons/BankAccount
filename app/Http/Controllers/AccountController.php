@@ -19,7 +19,7 @@ class AccountController extends Controller
     public function addCurrency(Request $request): RedirectResponse
     {
         $request->validate([
-            'newCurrency' => 'required|in:eur,usd,inv,btc', // Validate the chosen currency
+            'newCurrency' => 'required|in:' . implode(',', config('currencies.allowed')),
         ]);
 
         $user = auth()->user();
@@ -29,7 +29,7 @@ class AccountController extends Controller
             $user->balances()->create([
                 'account_type' => $request->input('newCurrency'),
                 'currency' => $request->input('newCurrency'),
-                //'balance' => 100, // Initial balance for the new currency
+                'balance' => 100, // Initial balance for the new currency
             ]);
         }
 
@@ -40,14 +40,14 @@ class AccountController extends Controller
     {
         $request->validate([
             'amount' => 'required|numeric|min:0.01',
-            'transferCurrency' => 'required|in:eur,usd,inv',
+            'transferCurrency' => 'required|in:' . implode(',', config('currencies.allowed')),
         ]);
 
         $user = auth()->user();
         $recipientId = $request->input('accountNr');
         $amount = $request->input('amount');
         $transferCurrency = $request->input('transferCurrency');
-        $accountType = 'EUR';
+        $accountType = 'USD';
 
         try {
             DB::beginTransaction();
@@ -101,13 +101,14 @@ class AccountController extends Controller
 
     }
 
-    private function getUserInvestmentBalance(User $user, string $currency): object
+    private function getUserInvestmentBalance(User $user, string $currency): ?object
     {
         return $user->balances()
             ->where('currency', $currency)
             ->where('account_type', 'inv')
             ->first();
     }
+
 
     private function decrementBalance(?Balance $balance, float $amount): void
     {
@@ -123,8 +124,14 @@ class AccountController extends Controller
         }
     }
 
-    private function transferToRecipient(User $recipient, float $amount, string $transferCurrency): void
+    private function transferToRecipient(?User $recipient, float $amount, string $transferCurrency): void
     {
+
+        if (!$recipient) {
+            \Log::error('Recipient is null. Transfer cannot be completed.');
+            return;
+        }
+
         $recipientBalance = $recipient->balances()->where('currency', $transferCurrency)->first();
 
         if ($recipientBalance) {
@@ -156,7 +163,7 @@ class AccountController extends Controller
     {
         $request->validate([
             'amount' => 'required|numeric|min:0.01',
-            'buyCurrency' => 'required|in:usd',
+            'buyCurrency' => 'required|in:inv',
         ]);
 
         $user = auth()->user();
@@ -165,9 +172,9 @@ class AccountController extends Controller
         try {
             DB::beginTransaction();
 
-            $usdBalance = $user->balances()->where('currency', 'usd')->first();
+            $usdBalance = $user->balances()->where('currency', 'inv')->first();
             if ($this->isInsufficientBalance($usdBalance, $usdAmount)) {
-                Log::info('Crypto purchase failed: Insufficient USD balance.');
+                Log::info('Crypto purchase failed: Insufficient Investment balance.');
                 return redirect()->route('clientAccount');
             }
 
@@ -222,7 +229,7 @@ class AccountController extends Controller
 
                 $user->balances()->updateOrInsert(
                     ['currency' => 'btc', 'user_id' => $user->id],
-                    ['avgBtcPrice' => $avgBtcPrice]
+                    ['avgBtcPrice' => $avgBtcPrice, 'account_type' => 'btc']
                 );
 
                 DB::commit();
@@ -263,6 +270,7 @@ class AccountController extends Controller
     {
         $avgPrice = $this->getAvgBtcPriceFromBalance($user);
         $realBtcPrice = $this->getCryptoUsdRate('BTC');
+
         if ($avgPrice != 0) {
             $percentageChange = (($avgPrice - $realBtcPrice) / $avgPrice) * 100;
         } else {
@@ -271,7 +279,7 @@ class AccountController extends Controller
 
         return $percentageChange;
     }
-    
+
     public function success(): Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $user = auth()->user();
@@ -294,7 +302,7 @@ class AccountController extends Controller
             'btcCurrentPrice' => number_format($btcCurrentPrice, 12),
             'btcAvgPrice' => number_format($btcAvgPrice, 12),
             'btcPercentage' => number_format($btcPercentage, 12),
-            'btcPercentage' => number_format($btcPercentage, 12),
+            'btcPercentage' => number_format($btcPercentage, 2),
         ]);
     }
 
