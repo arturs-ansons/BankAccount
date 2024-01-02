@@ -19,4 +19,5 @@ In instances where a user initiates a currency transfer from EUR to USD accounts
 ![Screenshot (179)](https://github.com/arturs-ansons/BankAccount/assets/65274330/7b1d02b0-7fca-4b4c-a8b8-8ec06bd202c3)
 </br>
 ## Client logged in view
-![Screenshot (180)](https://github.com/arturs-ansons/BankAccount/assets/65274330/faae490c-23fa-44ba-85ce-877fc3992364)
+![Screenshot (183)](https://github.com/arturs-ansons/BankAccount/assets/65274330/cb9270e7-aac6-4c49-b742-d57f4ec9e2ff)
+
