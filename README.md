@@ -2,9 +2,6 @@
 
 ## Project Specifications
 
-**Read-Only Files**
-- tests/*
-
 **Environment**
 - PHP version: 7.4
 - Laravel version:
