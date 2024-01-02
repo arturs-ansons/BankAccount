@@ -177,9 +177,8 @@ class AccountController extends Controller
             Log::info('USD Amount: ' . $usdAmount);
             Log::info('Crypto USD Rate: ' . $cryptoUsdRate);
 
-            // Check if the exchange rate is greater than zero before performing the division
             if (is_numeric($usdAmount) && is_numeric($cryptoUsdRate) && $cryptoUsdRate > 0) {
-                // Calculate the cryptocurrency amount using regular PHP arithmetic
+                
                 $cryptoAmount = $usdAmount * $cryptoUsdRate;
 
                 $cryptoAmount = number_format($cryptoAmount, 8, '.', '');
@@ -188,11 +187,9 @@ class AccountController extends Controller
 
                 Log::info('Crypto Amount: ' . $cryptoAmount);
 
-                // Decrement USD balance
                 $this->decrementBalance($usdBalance, $usdAmount);
 
-                // Increment Crypto balance
-                $cryptoBalance = $user->balances()->where('currency', 'BTC')->first(); // Replace 'BTC' with the correct cryptocurrency symbol
+                $cryptoBalance = $user->balances()->where('currency', 'BTC')->first();
                 $this->incrementBalance($cryptoBalance, $cryptoAmount);
 
                 DB::commit();
@@ -209,24 +206,20 @@ class AccountController extends Controller
         return redirect()->route('clientAccount');
     }
 
-    private function updateAvgBtcPrice(User $user, $cryptoAmount): float //counts only last purchase need to implement transaction logic
+    private function updateAvgBtcPrice(User $user, $cryptoAmount): float
     {
         try {
             DB::beginTransaction();
 
-            // Retrieve the exchange rate for the specified cryptocurrency (e.g., BTC to USD)
-            $cryptoUsdRate = $this->getCryptoUsdRate('BTC'); // Replace 'BTC' with the correct cryptocurrency symbol
+            $cryptoUsdRate = $this->getCryptoUsdRate('BTC');
 
             Log::info('Crypto USD Rate for updateAvgBtcPrice: ' . $cryptoUsdRate);
 
-            // Check if the exchange rate is greater than zero before proceeding
             if ($cryptoUsdRate > 0) {
-                // Calculate the new average BTC price
                 $avgBtcPrice = $cryptoUsdRate;
 
                 Log::info('New Avg BTC Price: ' . $avgBtcPrice);
 
-                // Update or insert the average BTC price into the balances table
                 $user->balances()->updateOrInsert(
                     ['currency' => 'btc', 'user_id' => $user->id],
                     ['avgBtcPrice' => $avgBtcPrice]
@@ -243,18 +236,15 @@ class AccountController extends Controller
         return $avgBtcPrice;
     }
 
-
-    private function getCryptoUsdRate(string $cryptoCurrency): float
+   private function getCryptoUsdRate(string $cryptoCurrency): float
     {
         try {
-            // Retrieve the exchange rate for the specified cryptocurrency (e.g., BTC to USD)
             $crypto = Crypto::where('currency', 'USD')->first();
-            // Check if the Crypto record exists and the exchange rate is greater than zero
             if ($crypto && $crypto->btc_rate > 0) {
                 return (float) $crypto->btc_rate;
             } else {
                 Log::info('Invalid exchange rate for ' . $cryptoCurrency);
-                return 0.0; // Return zero or another default value to indicate an issue
+                return 0.0;
             }
         } catch (\Exception $e) {
             Log::error('Error in getCryptoUsdRate: ' . $e->getMessage());
