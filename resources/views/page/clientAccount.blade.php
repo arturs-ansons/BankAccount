@@ -29,7 +29,7 @@
                 <p class="block text-sm font-medium text-gray-700 mt-2">BTC Purchase price: {{ $btcAvgPrice }}</p>
             @endif
             @if ($btcCurrentPrice > 0)
-                <p class="block text-sm font-medium text-gray-700 mt-2">BTC Real price: {{ $btcCurrentPrice }}</p>
+                <p class="block text-sm font-medium text-gray-700 mt-2">BTC Real time price: {{ $btcCurrentPrice }}</p>
             @endif
             <p class="block text-sm font-medium mt-2">
                 BTC price change: <span style="color: {{ $btcPercentage >= 0 ? 'green' : 'red' }}">{{ $btcPercentage }} %</span>
