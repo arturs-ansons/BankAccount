@@ -301,7 +301,6 @@ class AccountController extends Controller
             'cryptoBalance' => $cryptoBalance,
             'btcCurrentPrice' => number_format($btcCurrentPrice, 12),
             'btcAvgPrice' => number_format($btcAvgPrice, 12),
-            'btcPercentage' => number_format($btcPercentage, 12),
             'btcPercentage' => number_format($btcPercentage, 2),
         ]);
     }
