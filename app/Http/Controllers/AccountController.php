@@ -248,7 +248,7 @@ class AccountController extends Controller
         try {
             $crypto = Crypto::where('currency', 'USD')->first();
             if ($crypto && $crypto->btc_rate > 0) {
-                return (float) $crypto->btc_rate;
+                return $crypto->btc_rate;
             } else {
                 Log::info('Invalid exchange rate for ' . $cryptoCurrency);
                 return 0.0;
