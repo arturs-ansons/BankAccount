@@ -171,14 +171,13 @@ class AccountController extends Controller
                 return redirect()->route('clientAccount');
             }
 
-            // Retrieve the exchange rate for the specified cryptocurrency (e.g., BTC to USD)
-            $cryptoUsdRate = $this->getCryptoUsdRate('BTC'); // Replace 'BTC' with the correct cryptocurrency symbol
+            $cryptoUsdRate = $this->getCryptoUsdRate('BTC');
 
             Log::info('USD Amount: ' . $usdAmount);
             Log::info('Crypto USD Rate: ' . $cryptoUsdRate);
 
             if (is_numeric($usdAmount) && is_numeric($cryptoUsdRate) && $cryptoUsdRate > 0) {
-                
+
                 $cryptoAmount = $usdAmount * $cryptoUsdRate;
 
                 $cryptoAmount = number_format($cryptoAmount, 8, '.', '');
@@ -216,6 +215,7 @@ class AccountController extends Controller
             Log::info('Crypto USD Rate for updateAvgBtcPrice: ' . $cryptoUsdRate);
 
             if ($cryptoUsdRate > 0) {
+
                 $avgBtcPrice = $cryptoUsdRate;
 
                 Log::info('New Avg BTC Price: ' . $avgBtcPrice);
@@ -236,7 +236,8 @@ class AccountController extends Controller
         return $avgBtcPrice;
     }
 
-   private function getCryptoUsdRate(string $cryptoCurrency): float
+
+    private function getCryptoUsdRate(string $cryptoCurrency): float
     {
         try {
             $crypto = Crypto::where('currency', 'USD')->first();
@@ -259,7 +260,15 @@ class AccountController extends Controller
 
         return $avgBtcPrice ?: 0;
     }
+    private function getPercentOfBtcPriceChange(User $user): float{
 
+        $avgPrice = $this->getAvgBtcPriceFromBalance($user);
+        $realBtcPrice = $this->getCryptoUsdRate('BTC');
+        $percentageChange = (($avgPrice - $realBtcPrice) / $avgPrice) * 100;
+
+        return $percentageChange;
+
+    }
     public function success(): Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $user = auth()->user();
@@ -269,6 +278,7 @@ class AccountController extends Controller
         $cryptoBalance = $user->balances()->where('currency', 'btc')->value('balance');
         $btcAvgPrice = $this->getAvgBtcPriceFromBalance($user);
         $btcCurrentPrice = $this->getCryptoUsdRate('BTC');
+        $btcPercentage = $this->getPercentOfBtcPriceChange($user);
 
 
         return view('page.clientAccount', [
@@ -280,6 +290,8 @@ class AccountController extends Controller
             'cryptoBalance' => $cryptoBalance,
             'btcCurrentPrice' => number_format($btcCurrentPrice, 12),
             'btcAvgPrice' => number_format($btcAvgPrice, 12),
+            'btcPercentage' => number_format($btcPercentage, 12),
+            'btcPercentage' => number_format($btcPercentage, 12),
         ]);
     }
 
