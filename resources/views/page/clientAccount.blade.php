@@ -18,7 +18,7 @@
         @endif
 
         @if ($invBalance > 0)
-            <p class="block text-sm font-medium text-gray-700 mt-2">Investment Balance: {{ $invBalance }} EUR</p>
+            <p class="block text-sm font-medium text-gray-700 mt-2">Investment Balance: {{ $invBalance }} USD</p>
         @endif
             @if ($cryptoBalance > 0)
                 <p class="block text-sm font-medium">
@@ -93,7 +93,7 @@
                 <label for="buyCurrency">Payment Currency:</label>
                 <select name="buyCurrency" id="buyCurrency" class="form-select" style="width: 207px">
                     <option value="default">Currency options</option>
-                    <option value="usd">Dollar (USD)</option>
+                    <option value="inv">Dollar (USD)</option>
                 </select>
             </div>
 
