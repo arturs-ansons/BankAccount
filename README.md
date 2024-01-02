@@ -15,6 +15,7 @@ Upon completing the registration process, users are directed to the clients port
 
 In instances where a user initiates a currency transfer from EUR to USD accounts, the program will automatically calculate the applicable exchange rate. This feature ensures a seamless and transparent financial transaction experience for our users.
 
+Program has also variety of validations.
 
 The client has the capability to assess the profitability of their cryptocurrency investments through a visual indicator. In the event of a profitable outcome, the cryptocurrency balance is presented in a green hue, whereas an unprofitable status is denoted by a red coloration. Additionally, the client is provided with a percentage representation illustrating the increment in the value of their investment in the specified currency.
 
