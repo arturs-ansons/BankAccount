@@ -21,16 +21,21 @@
             <p class="block text-sm font-medium text-gray-700 mt-2">Investment Balance: {{ $invBalance }} EUR</p>
         @endif
             @if ($cryptoBalance > 0)
-                <p class="block text-sm font-medium" style="color: {{ $btcCurrentPrice < $btcAvgPrice ? 'green' : 'red' }};">BTC Balance: {{ $cryptoBalance }}</p>
+                <p class="block text-sm font-medium">
+                    BTC Balance:
+                    <span style="color: {{ $btcCurrentPrice < $btcAvgPrice ? 'green' : 'red' }};">{{ $cryptoBalance }}</span></p>
             @endif
-
-
-        @if ($btcAvgPrice > 0)
+            @if ($btcAvgPrice > 0)
                 <p class="block text-sm font-medium text-gray-700 mt-2">BTC Purchase price: {{ $btcAvgPrice }}</p>
             @endif
             @if ($btcCurrentPrice > 0)
                 <p class="block text-sm font-medium text-gray-700 mt-2">BTC Real price: {{ $btcCurrentPrice }}</p>
             @endif
+            <p class="block text-sm font-medium mt-2">
+                BTC price change: <span style="color: {{ $btcPercentage >= 0 ? 'green' : 'red' }}">{{ $btcPercentage }} %</span>
+            </p>
+
+
 
 
     </div>
