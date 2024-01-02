@@ -1,4 +1,4 @@
-# Laravel: Blog Application
+# Laravel: Bank Account Application
 
 ## Project Specifications
 
