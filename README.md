@@ -8,5 +8,5 @@
 - Default Port: 8000
 - Sqlite3 (PHP package)
 
-## Question description
+## Application description
 
