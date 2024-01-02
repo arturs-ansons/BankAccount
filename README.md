@@ -3,8 +3,8 @@
 ## Project Specifications
 
 **Environment**
-- PHP version: 8.0
-- Laravel version:
+- PHP version: ^8.0
+- Laravel version: ^8.75
 - Default Port: 8000
 - Sqlite3 (PHP package)
 
