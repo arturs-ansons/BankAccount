@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind forms;
+@tailwind typography;
+@tailwind utilities;
+
+@import "components/forms";
+@import "components/button";
+@import "components/page";
+@import "components/typography";

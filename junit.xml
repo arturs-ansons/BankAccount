@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="29" assertions="55" errors="1" warnings="0" failures="21" skipped="0" time="33.974112">
+    <testsuite name="Browser Test Suite" tests="29" assertions="55" errors="1" warnings="0" failures="21" skipped="0" time="33.974112">
+      <testsuite name="Tests\Browser\AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" tests="13" assertions="18" errors="1" warnings="0" failures="7" skipped="0" time="21.542397">
+        <testcase name="testCanAccessIndex" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="59" assertions="1" time="1.546173"/>
+        <testcase name="testLoginEmailValidation" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="73" assertions="1" time="1.468314">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testLoginEmailValidation
+Did not see expected text [Please provide a valid e-mail address] within element [body].
+Failed asserting that false is true.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:181
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:152
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:78
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:81</failure>
+        </testcase>
+        <testcase name="testRegisterEmailValidation" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="90" assertions="1" time="1.033862">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testRegisterEmailValidation
+Did not see expected text [Please provide a valid e-mail address] within element [body].
+Failed asserting that false is true.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:181
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:152
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:95
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:98</failure>
+        </testcase>
+        <testcase name="testRegisterPasswordValidation" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="107" assertions="1" time="1.054134">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testRegisterPasswordValidation
+Did not see expected text [This field value must be the same as "Password"] within element [body].
+Failed asserting that false is true.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:181
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:152
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:112
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:115</failure>
+        </testcase>
+        <testcase name="testLoginErrorMessage" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="124" assertions="2" time="1.682133">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testLoginErrorMessage
+Did not see expected text [Password or e-mail is incorrect!] within element [body].
+Failed asserting that false is true.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:181
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:152
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:132
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:133</failure>
+        </testcase>
+        <testcase name="testRegisterSuccessMessage" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="142" assertions="1" time="1.989037">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testRegisterSuccessMessage
+Did not see expected text [User registered successfully!] within element [body].
+Failed asserting that false is true.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:181
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesAssertions.php:152
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:153
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:154</failure>
+        </testcase>
+        <testcase name="testSuccessRouteGuard" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="163" assertions="1" time="0.311892"/>
+        <testcase name="testDoesLoginFail" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="177" assertions="2" time="1.195871"/>
+        <testcase name="testDoesRegisterFail" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="195" assertions="2" time="1.239623"/>
+        <testcase name="testDoesRegisterSucceed" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="216" assertions="2" time="1.804695">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testDoesRegisterSucceed
+User is not created
+Failed asserting that null is not null.
+
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:228
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:229</failure>
+        </testcase>
+        <testcase name="testDoesLoginSucceed" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="238" assertions="1" time="1.491727">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppFunctionalityTest::testDoesLoginSucceed
+Actual path [/] does not equal expected path [/success].
+Failed asserting that '/' matches PCRE pattern "/^\/success$/u".
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesUrlAssertions.php:185
+/projects/challenge/vendor/laravel/dusk/src/Concerns/MakesUrlAssertions.php:218
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:246
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:248</failure>
+        </testcase>
+        <testcase name="testSuccessPageContent" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="257" assertions="1" time="5.952119">
+          <error type="Facebook\WebDriver\Exception\TimeoutException">Tests\Browser\AppFunctionalityTest::testSuccessPageContent
+Facebook\WebDriver\Exception\TimeoutException: Waited 5 seconds for text [Hello, Magebit Test] ignoring case.
+
+/projects/challenge/vendor/laravel/dusk/src/Concerns/WaitsForElements.php:408
+/projects/challenge/app/Providers/DuskServiceProvider.php:24
+/projects/challenge/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:124
+/projects/challenge/vendor/laravel/dusk/src/Browser.php:710
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:267
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppFunctionalityTest.php:270</error>
+        </testcase>
+        <testcase name="testLogout" class="Tests\Browser\AppFunctionalityTest" classname="Tests.Browser.AppFunctionalityTest" file="/projects/challenge/tests/Browser/AppFunctionalityTest.php" line="279" assertions="2" time="0.772816"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" tests="16" assertions="37" errors="0" warnings="0" failures="14" skipped="0" time="12.431715">
+        <testcase name="testIsCorrectFontFamily" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="109" assertions="1" time="1.001908">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsCorrectFontFamily
+Body has incorrect font family
+Failed asserting that false is true.
+
+/projects/challenge/tests/Browser/AppStylingTest.php:117
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:119</failure>
+        </testcase>
+        <testcase name="testIsButtonCorrectColor" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="126" assertions="1" time="0.713601">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsButtonCorrectColor
+Button with text Sign In has incorrect background-color.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'rgba(15, 131, 82, 1)'
++'rgba(29, 78, 216, 1)'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:84
+/projects/challenge/tests/Browser/AppStylingTest.php:136
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:139</failure>
+        </testcase>
+        <testcase name="testIsHeaderIconsCorrectColor" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="146" assertions="1" time="0.692330">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsHeaderIconsCorrectColor
+Header icon has incorrect color.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'rgba(2, 23, 14, 1)'
++'rgba(31, 41, 55, 1)'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:84
+/projects/challenge/tests/Browser/AppStylingTest.php:156
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:159</failure>
+        </testcase>
+        <testcase name="testIsHeaderLinksCorrectColor" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="166" assertions="1" time="0.711918">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsHeaderLinksCorrectColor
+Header link with text "What's New" has incorrect color.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'rgba(2, 23, 14, 1)'
++'rgba(55, 65, 81, 1)'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:84
+/projects/challenge/tests/Browser/AppStylingTest.php:176
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:179</failure>
+        </testcase>
+        <testcase name="testIsHeaderLinksWithoutUnderline" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="186" assertions="2" time="0.806780">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsHeaderLinksWithoutUnderline
+Header link with text "What's New" has incorrect hover text-decoration-line.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'none'
++'underline'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:92
+/projects/challenge/tests/Browser/AppStylingTest.php:196
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:199</failure>
+        </testcase>
+        <testcase name="testIsHeaderLinksCorrectWeight" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="206" assertions="1" time="0.686765">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsHeaderLinksCorrectWeight
+Header link with text "What's New"
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'500'
++'400'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:215
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:218</failure>
+        </testcase>
+        <testcase name="testIsHeaderLinksUppercase" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="225" assertions="1" time="0.698671">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testIsHeaderLinksUppercase
+Header link with text "What's New" is not uppercase.
+Failed asserting that false is true.
+
+/projects/challenge/tests/Browser/AppStylingTest.php:232
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:235</failure>
+        </testcase>
+        <testcase name="testDoesHeaderBarHaveShadow" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="242" assertions="1" time="0.678848">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testDoesHeaderBarHaveShadow
+Header bar has missing/incorrect shadow.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'drop-shadow(rgba(0, 0, 0, 0.25) 0px 1px 8px)'
++'none'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:251
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:253</failure>
+        </testcase>
+        <testcase name="testForgotPasswordColor" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="260" assertions="1" time="0.661733">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testForgotPasswordColor
+Forgot password link has incorrect color.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'rgba(109, 109, 109, 1)'
++'rgba(75, 85, 99, 1)'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:84
+/projects/challenge/tests/Browser/AppStylingTest.php:270
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:272</failure>
+        </testcase>
+        <testcase name="testForgotPasswordUnderline" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="279" assertions="1" time="0.167519"/>
+        <testcase name="testFooterLinksColor" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="297" assertions="1" time="0.681367">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testFooterLinksColor
+Footer link with text "About" has incorrect color.
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'rgba(2, 23, 14, 1)'
++'rgba(31, 41, 55, 1)'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:84
+/projects/challenge/tests/Browser/AppStylingTest.php:307
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:310</failure>
+        </testcase>
+        <testcase name="testFooterLinksUnderline" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="317" assertions="21" time="2.081007"/>
+        <testcase name="testCheckboxStyling" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="337" assertions="1" time="0.673381">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testCheckboxStyling
+Newsletter checkbox doesn't have rounded border
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'4px'
++'0px'
+
+/projects/challenge/tests/Browser/AppStylingTest.php:59
+/projects/challenge/tests/Browser/AppStylingTest.php:346
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:364</failure>
+        </testcase>
+        <testcase name="testRegisterSectionTitle" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="371" assertions="1" time="0.722974">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testRegisterSectionTitle
+Couldn't find text "Create New Customer Account"
+Failed asserting that false is true.
+
+/projects/challenge/tests/Browser/AppStylingTest.php:380
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:382</failure>
+        </testcase>
+        <testcase name="testRegisterFormTitles" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="389" assertions="1" time="0.742582">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testRegisterFormTitles
+Couldn't find text "Personal Information"
+Failed asserting that false is true.
+
+/projects/challenge/tests/Browser/AppStylingTest.php:398
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:407</failure>
+        </testcase>
+        <testcase name="testFooterCopyright" class="Tests\Browser\AppStylingTest" classname="Tests.Browser.AppStylingTest" file="/projects/challenge/tests/Browser/AppStylingTest.php" line="414" assertions="1" time="0.710331">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Browser\AppStylingTest::testFooterCopyright
+Couldn't find text "© 2023 Pineapple Ltd."
+Failed asserting that false is true.
+
+/projects/challenge/tests/Browser/AppStylingTest.php:423
+/projects/challenge/vendor/laravel/dusk/src/Concerns/ProvidesBrowser.php:69
+/projects/challenge/tests/Browser/AppStylingTest.php:425</failure>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

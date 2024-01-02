@@ -1,0 +1,35 @@
+
+body {
+    @apply bg-container;
+}
+
+.page-main {
+    @apply my-8;
+}
+
+.columns {
+    @apply grid grid-cols-1 gap-x-8 gap-y-4 container;
+    grid-template-rows: auto minmax(0,1fr);
+
+    .main {
+        @apply order-2;
+    }
+}
+
+.card {
+    @apply p-4 rounded-sm bg-container-lighter shadow;
+}
+
+.actions-toolbar {
+    @apply mt-6 border-t border-container-darker pt-4 flex justify-between flex-row-reverse items-center
+}
+
+
+#customer-login-container {
+    @apply flex flex-col justify-between py-8;
+
+    @screen md {
+        @apply flex-row;
+    }
+}
+
