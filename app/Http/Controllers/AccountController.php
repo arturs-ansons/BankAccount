@@ -236,7 +236,6 @@ class AccountController extends Controller
         return $avgBtcPrice;
     }
 
-
     private function getCryptoUsdRate(string $cryptoCurrency): float
     {
         try {
@@ -260,15 +259,19 @@ class AccountController extends Controller
 
         return $avgBtcPrice ?: 0;
     }
-    private function getPercentOfBtcPriceChange(User $user): float{
-
+    private function getPercentOfBtcPriceChange(User $user): float
+    {
         $avgPrice = $this->getAvgBtcPriceFromBalance($user);
         $realBtcPrice = $this->getCryptoUsdRate('BTC');
-        $percentageChange = (($avgPrice - $realBtcPrice) / $avgPrice) * 100;
+        if ($avgPrice != 0) {
+            $percentageChange = (($avgPrice - $realBtcPrice) / $avgPrice) * 100;
+        } else {
+            $percentageChange = 0;
+        }
 
         return $percentageChange;
-
     }
+    
     public function success(): Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
     {
         $user = auth()->user();
