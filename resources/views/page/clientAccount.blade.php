@@ -40,7 +40,7 @@
 
     </div>
 
-    <div class="flex justify-center items-center my-4">
+    <div class="flex justify-center items-center my-4 border-t pt-4" style="margin-right: 15px;">
         <form action="{{ route('transfer-money') }}" method="post" class="mr-4">
             @csrf
             <label for="accountNr" class="block text-lg font-medium text-gray-700 mt-2">
