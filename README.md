@@ -22,5 +22,8 @@ The client has the capability to assess the profitability of their BTC investmen
 ## Registration/Login Dashboard
 ![Screenshot (179)](https://github.com/arturs-ansons/BankAccount/assets/65274330/7b1d02b0-7fca-4b4c-a8b8-8ec06bd202c3)
 </br>
-## Client Dashboard
+## Client Dashboard 
 ![Screenshot (186)](https://github.com/arturs-ansons/BankAccount/assets/65274330/039d5e06-deb1-4112-a8f6-e829f26faded)
+
+
+
