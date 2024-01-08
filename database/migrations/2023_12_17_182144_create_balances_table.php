@@ -11,19 +11,24 @@ class CreateBalancesTable extends Migration
      *
      * @return void
      */
-// In the new migration file
     public function up()
     {
+
         Schema::create('balances', function (Blueprint $table) {
+            // balances migration
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('iban')->unique();
             $table->string('account_type');
             $table->string('currency');
-            $table->decimal('balance', 10, 2)->default(0.00);
-            $table->decimal('avgBtcPrice', 10, 2)->default(0.00);
+            $table->decimal('balance', 18, 15)->default(0.00);
+            $table->decimal('avgBtcPrice', 18, 15)->default(0.00);
             $table->timestamps();
+
         });
+
     }
+
 
 
     /**

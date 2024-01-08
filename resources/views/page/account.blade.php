@@ -138,18 +138,6 @@
                                 </div>
                             </div>
 
-                            <div class="field">
-                                <label class="label" for="currency">
-                                    <span>Preferred Currency</span>
-                                </label>
-                                <div class="control">
-                                    <select name="currency" id="currency" class="form-select" style="width: 210px;">
-                                        <option value="default">Choose currency</option>
-                                        <option value="EUR">Euro (EUR)</option>
-                                        <option value="USD">Dollar (USD)</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="actions-toolbar pt-6 pb-2 flex self-end">
                                 <button data-test="register-submit" type="submit" class="btn btn-primary" name="send">
                                     <span>Create Account</span>

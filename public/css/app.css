@@ -1596,3 +1596,54 @@ a:active {
     grid-column: span 2 / span 2;
   }
 }
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    width: 24px;
+    height: 18px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}

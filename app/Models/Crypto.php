@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,12 +9,11 @@ class Crypto extends Model
     use HasFactory;
 
     protected $fillable = [
-        'currency',
-        'btc_rate',
+        'crypto_name',
+        'usd_rate',
     ];
 
     protected $attributes = [
-        'currency' => 0.00,
-        'btc_rate' => 0.00,
+        'usd_rate' => 0.0,
     ];
 }

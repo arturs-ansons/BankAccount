@@ -18,6 +18,7 @@ class AuthController extends Controller
 
     public function login(Request $request): RedirectResponse
     {
+
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -26,7 +27,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/clientAccount');
+            return redirect()->intended('/dashboard');
         }
 
         return back();
@@ -55,15 +56,10 @@ class AuthController extends Controller
                 'email' => $request->input('registerEmail'),
                 'password' => bcrypt($request->input('password')),
             ]);
-            $user->balances()->create([
-                'account_type' => $request->input('currency'),
-                'currency' => $request->input('currency'),
-                //'balance' => 100,
-            ]);
 
             Auth::login($user);
 
-            return redirect()->route('clientAccount');
+            return redirect()->route('dashboard');
 
         } catch (\Exception $e) {
             dd($e->getMessage());

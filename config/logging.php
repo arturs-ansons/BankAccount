@@ -53,7 +53,24 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
-
+        'transfer' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/transfer.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
+        'buy-crypto' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/buy-crypto.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
+        'sell-crypto' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/sell-crypto.log'),
+            'level' => 'debug',
+            'days' => 14,
+        ],
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
@@ -94,6 +111,7 @@ return [
                 'stream' => 'php://stderr',
             ],
         ],
+
 
         'syslog' => [
             'driver' => 'syslog',
