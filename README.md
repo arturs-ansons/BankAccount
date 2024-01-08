@@ -17,7 +17,7 @@ In instances where a user initiates a currency transfer from EUR to USD accounts
 
 Program has also variety of validations, success and warning messages.
 
-Currency rates are updating in period set by adminstrator.
+Currency rates are updating from API in period set by adminstrator.
 
 The client has the capability to assess the profitability of their BTC investments through a visual indicator. In the event of a profitable outcome, the BTC balance is presented in a green hue, whereas an unprofitable status is denoted by a red coloration. Additionally, the client is provided with a percentage representation illustrating the increment in the value of their investment in the BTC.
 
