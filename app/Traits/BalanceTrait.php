@@ -13,11 +13,11 @@ trait BalanceTrait
 
     private function decrementBalance(?Balance $balance, float $amount): void
     {
-        $balance?->decrement('balance', $amount);
+        $balance->decrement('balance', $amount);
     }
 
     private function incrementBalance(?Balance $balance, float $amount): void
     {
-        $balance?->increment('balance', $amount);
+        $balance->increment('balance', $amount);
     }
 }
