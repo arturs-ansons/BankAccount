@@ -11,9 +11,9 @@
                 <label for="buyCurrency">Payment Currency:</label>
                 <select name="buyCurrency" id="buyCurrency" class="form-select" style="width: 207px">
                     <option value="default">Select Cryptocurrency</option>
-                    <option value="BTC">Bitcoin (BTC)</option>
-                    <option value="ETH">Ethereum (ETH)</option>
-                    <option value="XRP">Ripple (XRP)</option>
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="xrp">Ripple (XRP)</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary mt-4">Buy Crypto</button>
