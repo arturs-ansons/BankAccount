@@ -98,9 +98,7 @@ class TransferService
 
         $recipientBalance = $recipient->balances()->where('currency', $transferCurrency)->first();
 
-        if ($recipientBalance) {
-            $this->incrementBalance($recipientBalance, $amount);
-        } else {
+        if (!$recipientBalance) {
             $this->handleRecipientWithoutCurrency($recipient, $amount, $transferCurrency);
         }
     }
